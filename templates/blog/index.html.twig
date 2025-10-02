@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BlogController!{% endblock %}
+{% block title %}{{ services.Titre }}!{% endblock %}
 
 {% block body %}
         <!-- Blog Content -->
@@ -11,7 +11,7 @@
                         <div class="blog-posts">
                             <div class="blog-details-post">
                                 <div class="blog-thumbnail">
-                                    <img src="/assets/images/blog/single-1.jpg" alt="">
+                                    <img src="{{ vich_uploader_asset(articles, 'imageFile') }}" alt="" width="715" height="417">
                                 </div>
                                 <div class="details-blog-meta mt-20">
                                     <div class="blog-date">

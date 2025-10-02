@@ -2,6 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        		<script src="https://cdn.jsdelivr.net/gh/hpruvot/tarteaucitron@master/tarteaucitron.js"></script>
+        <script type="text/javascript">
+            if(tarteaucitron) {
+                tarteaucitron.init({
+                    "tarteaucitronForceCDN": "https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@master",
+                    "privacyUrl": "", /* Privacy policy url */
+
+                    "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+                    "cookieName": "tartaucitron", /* Cookie name */
+
+                    "orientation": "bottom", /* Banner position (top - bottom) */
+                    "showAlertSmall": false, /* Show the small banner on bottom right */
+                    "cookieslist": true, /* Show the cookie list */
+
+                    "adblocker": false, /* Show a Warning if an adblocker is detected */
+                    "AcceptAllCta": true, /* Show the accept all button when highPrivacy on */
+                    "highPrivacy": false, /* Disable auto consent */
+                    "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+                    "removeCredit": true, /* Remove credit link */
+                    "moreInfoLink": false, /* Show more info link */
+                    "useExternalCss": false /* If false, the tarteaucitron.css file will be loaded */
+
+                    //"cookieDomain": ".my-multisite-domaine.fr" /* Shared cookie for subdomain website */
+                });
+
+                tarteaucitron.user.gtagUa = 'G-QKWQ1PVYMZ';
+                // tarteaucitron.user.gtagCrossdomain = ['example.com', 'example2.com'];
+                tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+                (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+            }
+        </script>
         <title>{% block title %}Welcome!{% endblock %}</title>
         <meta name="description" content="{% block description %}Welcome!{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +42,8 @@
         <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
         {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="{{ asset('assets/css/cookies.css') }}">
+
 
     </head>
     <body>
@@ -37,23 +71,244 @@
 
         {% block javascripts %}{% endblock %}
         {# Mise en plave des données structurées #}
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "ACO PROPRETÉ, expert en nettoyage pour professionnels",
-                "url": "https://acoproprete.com/",
-                "logo": "https://acoproprete.com/images/logo.png",
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "telephone": "+33 6 95 74 93 94",
-                    "contactType": "customer service",
-                    "areaServed": "FR",
-                    "availableLanguage": "French",
-                    "contactOption": "TollFree",
-                    "email": "aco@acoproprete.com"
-                }
-            }
-        </script>
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "LocalBusiness",
+		  "name": "ACO PROPRETÉ, expert en nettoyage pour professionnels",
+		  "image": "https://acoproprete.com/images/logo.png",
+		  "@id": "https://acoproprete.com/#localbusiness",
+		  "url": "https://acoproprete.com/",
+		  "telephone": "+33 6 95 74 93 94",
+		  "email": "aco@acoproprete.com",
+		  "priceRange": "$$",
+		  "description": "Entreprise spécialisée dans le nettoyage professionnel : bureaux, commerces, copropriétés, industries et locaux spécifiques. Interventions rapides et sur mesure à Lugrin et en Haute-Savoie.",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "1 Av. des Peupliers",
+			"addressLocality": "Lugrin",
+			"postalCode": "74500",
+			"addressRegion": "Auvergne-Rhône-Alpes",
+			"addressCountry": "FR"
+		  },
+		  "geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 46.40157,
+			"longitude": 6.64038
+		  },
+		  "hasMap": "https://www.google.com/maps/place/1+Av.+des+Peupliers,+74500+Lugrin",
+		  "openingHoursSpecification": [
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+			  "opens": "09:00",
+			  "closes": "18:00"
+			},
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": ["Saturday","Sunday"],
+			  "opens": "00:00",
+			  "closes": "00:00"
+			}
+		  ],
+		  "areaServed": {
+			"@type": "Place",
+			"name": "Haute-Savoie, Chablais, Evian-les-Bains, Thonon-les-Bains, Annemasse, Genève"
+		  },
+		  "sameAs": [
+			"https://www.facebook.com/acoproprete",
+			"https://www.linkedin.com/company/aco-proprete"
+		  ],
+		  "founder": {
+			"@type": "Person",
+			"name": "Aco Lukovic",
+			"jobTitle": "Gérant"
+		  },
+		  "foundingDate": "2015",
+		  "foundingLocation": {
+			"@type": "Place",
+			"name": "Lugrin, Haute-Savoie, France"
+		  },
+		  "brand": {
+			"@type": "Brand",
+			"name": "ACO PROPRETÉ",
+			"logo": "https://acoproprete.com/images/logo.png"
+		  },
+
+		  "makesOffer": [
+			{
+			  "@type": "Offer",
+			  "itemOffered": {
+				"@type": "Service",
+				"name": "Nettoyage de bureaux",
+				"areaServed": "Haute-Savoie",
+				"provider": {"@id": "https://acoproprete.com/#localbusiness"}
+			  }
+			},
+			{
+			  "@type": "Offer",
+			  "itemOffered": {
+				"@type": "Service",
+				"name": "Entretien de commerces",
+				"areaServed": "Haute-Savoie",
+				"provider": {"@id": "https://acoproprete.com/#localbusiness"}
+			  }
+			},
+			{
+			  "@type": "Offer",
+			  "itemOffered": {
+				"@type": "Service",
+				"name": "Nettoyage de copropriétés",
+				"areaServed": "Haute-Savoie",
+				"provider": {"@id": "https://acoproprete.com/#localbusiness"}
+			  }
+			},
+			{
+			  "@type": "Offer",
+			  "itemOffered": {
+				"@type": "Service",
+				"name": "Services de nettoyage industriel",
+				"areaServed": "Haute-Savoie",
+				"provider": {"@id": "https://acoproprete.com/#localbusiness"}
+			  }
+			},
+			{
+			  "@type": "Offer",
+			  "itemOffered": {
+				"@type": "Service",
+				"name": "Interventions spécialisées (après travaux, vitrerie, désinfection)",
+				"areaServed": "Haute-Savoie",
+				"provider": {"@id": "https://acoproprete.com/#localbusiness"}
+			  }
+			}
+		  ],
+
+		  "hasOfferCatalog": {
+			"@type": "OfferCatalog",
+			"name": "Prestations de nettoyage",
+			"itemListElement": [
+			  {
+				"@type": "OfferCatalog",
+				"name": "Nettoyage récurrent",
+				"itemListElement": [
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Nettoyage de bureaux"}
+				  },
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Entretien de commerces"}
+				  },
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Nettoyage de copropriétés"}
+				  }
+				]
+			  },
+			  {
+				"@type": "OfferCatalog",
+				"name": "Interventions ponctuelles",
+				"itemListElement": [
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Après travaux / remise en état"}
+				  },
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Vitrerie"}
+				  },
+				  {
+					"@type": "Offer",
+					"itemOffered": {"@type": "Service", "name": "Désinfection"}
+				  }
+				]
+			  }
+			]
+		  },
+
+		"knowsAbout": [
+		  "Nettoyage de bureaux quotidiens",
+		  "Entretien de salles de réunion",
+		  "Désinfection de claviers et postes de travail",
+		  "Nettoyage de vitres intérieures",
+		  "Nettoyage de vitres extérieures en hauteur",
+		  "Lavage de façades vitrées",
+		  "Nettoyage après travaux",
+		  "Nettoyage de fin de chantier",
+		  "Entretien de commerces et boutiques",
+		  "Nettoyage de centres commerciaux",
+		  "Entretien d’écoles maternelles",
+		  "Nettoyage de collèges et lycées",
+		  "Désinfection de cantines scolaires",
+		  "Nettoyage de salles de sport scolaires",
+		  "Entretien des universités et bibliothèques",
+		  "Nettoyage des hôpitaux",
+		  "Entretien des cliniques et cabinets médicaux",
+		  "Désinfection de blocs opératoires",
+		  "Nettoyage des salles d’attente",
+		  "Entretien des maisons de retraite et EHPAD",
+		  "Nettoyage d’immeubles de copropriété",
+		  "Entretien des halls d’immeubles",
+		  "Nettoyage de cages d’escaliers",
+		  "Entretien de locaux techniques",
+		  "Nettoyage de parkings souterrains",
+		  "Entretien des ascenseurs et cabines",
+		  "Nettoyage industriel lourd",
+		  "Dépoussiérage de machines industrielles",
+		  "Nettoyage d’entrepôts logistiques",
+		  "Entretien des sols industriels",
+		  "Nettoyage des ateliers de production",
+		  "Entretien des zones de stockage alimentaire",
+		  "Nettoyage haute pression extérieur",
+		  "Nettoyage de graffitis sur façades",
+		  "Remise en état après sinistre (inondation, incendie)",
+		  "Désinfection après dégâts des eaux",
+		  "Nettoyage des moquettes et tapis",
+		  "Shampoing et désinfection des sièges de bureau",
+		  "Nettoyage des rideaux et tentures",
+		  "Entretien des sols carrelés",
+		  "Lustrage et métallisation des sols",
+		  "Nettoyage des sols en béton ciré",
+		  "Décapage et remise en état de sols PVC",
+		  "Entretien de marbres et pierres naturelles",
+		  "Nettoyage de cuisines professionnelles",
+		  "Désinfection des sanitaires publics",
+		  "Nettoyage de vestiaires sportifs",
+		  "Entretien de salles de spectacle et cinémas",
+		  "Nettoyage de gares et zones d’accueil du public",
+		  "Entretien de banques et agences immobilières"
+		],
+
+		"keywords": "nettoyage Lugrin, nettoyage Haute-Savoie, nettoyage Chablais, entretien bureaux, nettoyage bureaux Evian-les-Bains, nettoyage bureaux Thonon-les-Bains, vitrerie Lugrin, lavage de vitres Haute-Savoie, nettoyage après travaux, remise en état après chantier, nettoyage commerces, entretien magasins, nettoyage copropriétés, entretien immeubles, nettoyage halls d’immeubles, nettoyage cages d’escaliers, nettoyage parkings souterrains, nettoyage ascenseurs, nettoyage industriel Haute-Savoie, nettoyage entrepôts, nettoyage ateliers, nettoyage zones de stockage alimentaire, dépoussiérage machines industrielles, nettoyage sols industriels, entretien moquettes, shampoing tapis, désinfection bureaux, désinfection écoles, nettoyage cantines scolaires, nettoyage salles de sport, nettoyage universités, nettoyage hôpitaux, entretien cliniques, désinfection blocs opératoires, nettoyage salles d’attente, entretien EHPAD, nettoyage vitres en hauteur, lavage façades vitrées, nettoyage graffitis, nettoyage haute pression, désinfection sanitaires, entretien cuisines professionnelles, nettoyage vestiaires sportifs, nettoyage salles de spectacle, entretien cinémas, nettoyage gares, entretien agences immobilières, nettoyage banques, vitrerie professionnelle Haute-Savoie, entreprise de nettoyage Lugrin, société de nettoyage Evian, société de nettoyage Thonon, société de nettoyage Annemasse, nettoyage Genève"
+		}
+		</script>
+
+        {% if app.environment == 'prod' %}
+            <!-- Yandex.Metrika counter -->
+            <script type="text/javascript">
+                (function(m,e,t,r,i,k,a){
+                    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                    m[i].l=1*new Date();
+                    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+                })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104327452', 'ym');
+
+                ym(104327452, 'init', {
+                    ssr:true,
+                    webvisor:true,
+                    clickmap:true,
+                    ecommerce:"dataLayer",
+                    accurateTrackBounce:true,
+                    trackLinks:true
+                });
+            </script>
+            <noscript>
+                <div>
+                    <img src="https://mc.yandex.ru/watch/104327452" style="position:absolute; left:-9999px;" alt="" />
+                </div>
+            </noscript>
+            <!-- /Yandex.Metrika counter -->
+{% endif %}
+
     </body>
 </html>
