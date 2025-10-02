@@ -62,115 +62,15 @@
                                     <span>Gérant</span>
                                 </div>
                             </div>
-                            <div class="sidebar-widget search-sidebar no-border">
-                                <div class="search-form">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search...">
-                                        <button type="submit"><i class="fas fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
                             <div class="sidebar-widget category-widget">
                                 <div class="widget-title">
                                     <h5>Categories</h5>
                                 </div>
                                 <div class="list-nav">
                                     <ul>
-                                        <li><a href="blog.html" class="active">House Cleaning(5)</a></li>
-                                        <li><a href="blog.html">Apartment Cleaning(8)</a></li>
-                                        <li><a href="blog.html">Carpet Cleaning(3)</a></li>
-                                        <li><a href="blog.html">Commercial Cleaning(4)</a></li>
-                                        <li><a href="blog.html">Window Cleaning(2)</a></li>
-                                        <li><a href="blog.html">Custain Cleaning(6)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar-widget recent-post-widget">
-                                <div class="widget-title">
-                                    <h5>Recent posts</h5>
-                                </div>
-                                <div class="recent-post-single">
-                                    <div class="post-thumbnail">
-                                        <a href="blog-details.html"><img src="assets/images/blog/rc-1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-post-content">
-                                        <div class="title">
-                                            <a href="blog-details.html"><h6>What to do with your Old Blog Posts?</h6></a>
-                                        </div>
-                                        <div class="blog-meta">
-                                            <span>August 12, 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post-single">
-                                    <div class="post-thumbnail">
-                                        <a href="blog-details.html"><img src="assets/images/blog/rc-2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-post-content">
-                                        <div class="title">
-                                            <a href="blog-details.html"><h6>10 Benifits of PPC for Small Business</h6></a>
-                                        </div>
-                                        <div class="blog-meta">
-                                            <span>November 10, 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post-single">
-                                    <div class="post-thumbnail">
-                                        <a href="#"><img src="assets/images/blog/rc-3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="recent-post-content">
-                                        <div class="title">
-                                            <a href="#"><h6>Ten Instagram the Marketing Tips...</h6></a>
-                                        </div>
-                                        <div class="blog-meta">
-                                            <span>October 12, 2020</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="sidebar-widget tags-widget">
-                                <div class="widget-title">
-                                    <h5>Tags</h5>
-                                </div>
-                                <div class="tags-list">
-                                    <a href="#">Map</a>
-                                    <a href="#">Cloud</a>
-                                    <a href="#">Builder</a>
-                                    <a href="#">Tower</a>
-                                    <a href="#">Truck</a>
-                                </div>
-                            </div>
-                            <div class="sidebar-widget instagram-widget">
-                                <div class="widget-title">
-                                    <h5>Gallery</h5>
-                                </div>
-                                <div class="insta-gallery">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-1.jpg" alt="">
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-2.jpg" alt="">
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-3.jpg" alt="">
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-4.jpg" alt="">
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-5.jpg" alt="">
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fab fa-instagram"></i></a>
-                                            <img src="assets/images/home1/insta-6.jpg" alt="">
-                                        </li>
+                                        {% for item in menus %}
+                                        <li><a href="{{ path('app_blog_list', {category: item.slug}) }}">{{ item.name }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
