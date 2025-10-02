@@ -18,14 +18,27 @@
                     <div class="bixol-team-content">
                         <a href="#"><h5>{{ team.nom }}</h5></a>
                         <span>{{ team.expertise }}</span>
-                        <span class="team-social-link"><i class="fas fa-share-alt"></i></span>
-                        <div class="bixol-team-social-items">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
 </section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aco propreté",
+  "employee": [
+    {% for team in teams %}
+    {
+      "@type": "Person",
+      "name": "{{ team.nom|e }}",
+      "jobTitle": "{{ team.expertise|e }}",
+      "image": "{{ vich_uploader_asset(team, 'imageFile') }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
