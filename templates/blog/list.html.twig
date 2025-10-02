@@ -13,9 +13,9 @@
                         <div class="blog-posts">
                             {% for item in articles[0].articleBlogs %}
                             <div class="blog-single-post">
-                                <div class="bixol-img-wrapper">
+                                <div class="bixol-img-wrapper"> 
                                     <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}">
-                                        <img src="/assets/images/blog/blog-1.jpg" alt="{{ item.name }}" height="321" height="270">
+                                <img src="{{ vich_uploader_asset(item, 'imageFile') is not empty ? vich_uploader_asset(item, 'imageFile') : asset('images/blog/default-small.png') }}" alt="{{ item.name }}" width="270" height="321">
                                     </a>
                                     <div class="bixol-blog-date">
                                         <span>{{ item.createdAt|format_datetime(locale='fr', pattern='dd MMM') }}</span>

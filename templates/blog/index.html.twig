@@ -11,7 +11,7 @@
                         <div class="blog-posts">
                             <div class="blog-details-post">
                                 <div class="blog-thumbnail">
-                                    <img src="{{ vich_uploader_asset(articles, 'imageFile') }}" alt="" width="715" height="417">
+                                    <img src="{{ vich_uploader_asset(articles, 'imageFile') is not empty ? vich_uploader_asset(articles, 'imageFile') : asset('images/blog/default-big.png') }}" alt="" width="715" height="417">
                                 </div>
                                 <div class="details-blog-meta mt-20">
                                     <div class="blog-date">
@@ -59,5 +59,18 @@
                 </div>
             </div>
         </div>
-        <!-- Blog Content End -->
+
+                <style>
+        h2 {
+            font-size: 24px! important;
+            margin-bottom: 5px !important;
+        }
+        h3 {
+            font-size: 20px! important;
+        }
+
+        ol > li, ul > li {
+            margin-bottom: 15px;
+        }
+    </style>
 {% endblock %}
