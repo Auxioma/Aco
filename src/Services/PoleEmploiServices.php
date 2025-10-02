@@ -40,7 +40,7 @@ class PoleEmploiServices
         $postfields = $this->convertArrayToKeyAndValueUrl($postfields);
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://entreprise.pole-emploi.fr/connexion/oauth2/access_token?realm=partenaire',
+            CURLOPT_URL => 'https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=partenaire',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -68,7 +68,7 @@ class PoleEmploiServices
     {
         $q = str_replace(' ', '-', $q);
         $q = $this->removeAccents($q);
-        $url = "https://api.pole-emploi.io/partenaire/offresdemploi/v2/offres/search?codeROME=K1304&commune=74119&distance=500&sort=1&range=0-5";
+        $url = "https://api.francetravail.io/partenaire/offresdemploi/v2/offres/search?codeROME=K1304&commune=74119&distance=500&sort=1&range=0-5";
         $curl = curl_init();
         $opts = [
             CURLOPT_SSL_VERIFYPEER  => false,

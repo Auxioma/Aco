@@ -16,7 +16,7 @@
                             <div class="blog-single-post">
                                 <div class="bixol-img-wrapper">
                                     <a href="{{ job.origineOffre.urlOrigine }}" rel="external nofollow" target="_blank">
-                                        <img src="{{ job.entreprise.logo }}" width="270" height="321" alt="" style="height:321px;max-height:321px">
+                                        <img src="{{ job.entreprise.logo|default('tptp.png') }}" width="270" height="321" alt="" style="height:321px;max-height:321px">
                                     </a>
                                     <div class="bixol-blog-date">
                                         <span>{{ job.dateActualisation | date('d  M') }}</span>
@@ -32,7 +32,7 @@
                                         <p>{{ job.description | u.truncate(250, '...')}}</p>
                                     </div>
                                     <div class="bixol-blog-btn">
-                                        <a href="{{job.contact.urlPostulation }}" rel="external nofollow" target="_blank" class="bixol-primary-btn"> Postuler <span><i class="fas fa-plus"></i></span></a>
+                                        <a href="{{ job.origineOffre.urlOrigine }}" rel="external nofollow" target="_blank" class="bixol-primary-btn"> Postuler <span><i class="fas fa-plus"></i></span></a>
                                     </div>
                                 </div>
                             </div>
