@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+        <!-- Blog Content -->
+        <div class="blog-content-section blog-details pt-100 pb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog-posts">
+                            <div class="blog-details-post">
+                                <div class="blog-thumbnail">
+                                    <img src="/assets/images/blog/single-1.jpg" alt="">
+                                </div>
+                                <div class="details-blog-meta mt-20">
+                                    <div class="blog-date">
+                                        <span><i class="fas fa-calendar-alt"></i>{{ articles.createdAt|format_datetime(locale='fr', pattern='dd MMM yyyy') }}</span>
+                                    </div>
+                                    <div class="blog-author">
+                                        <span><i class="far fa-user"></i>Aco propreté</span>
+                                    </div>
+                                    <div class="blog-categories">
+                                        <span><i class="far fa-folder"></i>{{articles.menu.name}}</span>
+                                    </div>
+                                </div>
+                                {{articles.description|raw}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar blog-details-sidebar">
+
+                            <div class="sidebar-widget category-widget no-border">
+                                <div class="widget-title">
+                                    <h5>Categories</h5>
+                                </div>
+                                <div class="list-nav">
+                                    <ul>
+                                        {% for item in menus %}
+                                        <li><a href="{{ path('app_blog_list', {category: item.slug}) }}">{{ item.name }}</a></li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget contact-widget no-border" data-background="/assets/images/blog/sidebar-bg.jpg">
+                                <div class="widget-content">
+                                    <span class="subtitle">Don't hasitate to connect!</span>
+                                    <span class="title">Want to hire us?</span>
+                                    <p>Lorem ipsum dolor sit consectetur adipiscing elit, sed do tempo tour rincididunt ut labore.</p>
+                                    <a href="contact.html">Contact Us <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Content End -->
+{% endblock %}

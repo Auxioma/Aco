@@ -1,0 +1,20 @@
+
+<div class="bixol-mobile-menu">
+	<a href="{{ path('app_homepage') }}" class="mobile-menu-logo"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		{% block navigation %}
+			{% for categorie in categories %}
+				<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a itemprop="item" href="{{ url( categorie.slug ) }}">
+						<span itemprop="name">
+							{{ categorie.name }}
+						</span>
+					</a>
+					<meta itemprop="position" content="{{ loop.index }}"/>
+				</li>
+			{% endfor %}
+		{% endblock %}
+	</ul>
+</div>
+
+

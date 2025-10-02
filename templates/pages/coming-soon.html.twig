@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title'|trans }}{% endblock %}
+
+{% block body %}
+<!-- Coming Soon Area -->
+<div class="coming-soon pt-100 pb-150" data-background="assets/images/coming-soon-bg.jpg">
+    <div class="countdown-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="countdown">
+                        <li>
+                            <span class="days">00</span>
+                            <p class="days_ref">days</p>
+                        </li>
+                        <li class="seperator">:</li>
+                        <li>
+                            <span class="hours">00</span>
+                            <p class="hours_ref">hours</p>
+                        </li>
+                        <li class="seperator">:</li>
+                        <li>
+                            <span class="minutes">00</span>
+                            <p class="minutes_ref">minutes</p>
+                        </li>
+                        <li class="seperator">:</li>
+                        <li>
+                            <span class="seconds">00</span>
+                            <p class="seconds_ref">seconds</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title-txt">
+            <span>We are launching soon please <br>reload after days</span>
+        </div>
+        <div class="pera-txt">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint <br>ipsa voluptatibus.</p>
+        </div>
+        <div class="subscribe-form">
+            <form action="#">
+                <input type="text" placeholder="Enter Email Address">
+                <button type="submit">Notify me</button>
+            </form>
+        </div>
+        <div class="social-info">
+            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+<!-- Coming Soon End -->
+{% block body %}
+

@@ -1,0 +1,13 @@
+<!-- Breadcrumb Area -->
+
+<div class="bixol-breadcrumb" data-background="{{ asset('images/breadcrumb/' ~ services.Slug ~ '.png') | imagine_filter('slider') }}">
+    <span class="breadcrumb-object"><img src="{{ asset('images/breadcrumb/slider-object.png') }}" alt="{{ services.Titre }}"></span>
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h1>{{ services.Titre }}</h1>
+            <a href="{{ path('app_homepage') }}">Accueil <i class="fas fa-angle-double-right"></i></a>
+            <span>{{ services.Titre }}</span>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->  

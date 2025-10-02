@@ -1,0 +1,41 @@
+<!-- Testimonial Section -->
+<section class="abv2-feedback-section pt-100 pb-100" data-background="{{ asset('images/feedback-bg.jpg') }}">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 order-2 order-lg-1">
+                <div class="abv2-feedback-wrapper">
+                    {% for avis in avis %}
+                        <div class="single-item">
+                            <span class="quote-icon">,,</span>
+                            <div class="title">
+                                <span>{{ avis.name }}</span>
+                            </div>
+                            <div class="feedback-txt">
+                                <p>{{ avis.description | u.truncate(120, '...') }}</p>
+                            </div>
+                            <div class="clients-info">
+                                <div class="img-wrapper">
+                                    <span class="client-thumb"><img src="{{ vich_uploader_asset(avis, 'imageFile') }}" alt=""></span>
+                                </div>
+                                <div class="client-content">
+                                    <span>Avis du:</span>
+                                    <span>{{ avis.createdAt | date('d-m-Y') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-3 order-1 order-lg-2">
+                <div class="abv2-feedback-right">
+                    <div class="bixol-title-area">
+                        <span class="bixol-subtitle">{% trans %}Témoignage{% endtrans %}</span>
+                        <h3>{% trans %}commentaires des clients {% endtrans %}<span>{% trans %}satisfait{% endtrans %}</span></h3>
+                        <p>{% trans %}Merci de l'interet que vous porter a l'entreprise ACOPROPRETE{% endtrans %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial Section End --> 

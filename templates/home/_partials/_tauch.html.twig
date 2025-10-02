@@ -1,0 +1,26 @@
+        <!-- Get In Tauch -->
+        <section class="bixol-gta-area responsive-bg" data-background="{{ asset('images/contact.png') }}">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 pl-0">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bixol-gt-right">
+                            <h4>Demandez un devis</h4>
+                            {{ form_start(form) }}
+                                {{ form_widget(form.nom) }}
+                                {{ form_widget(form.telephone) }}
+                                {{ form_widget(form.email) }}
+                                <div class="bx-form-select">
+                                    {{ form_widget(form.metier) }}
+                                </div>
+                                {{ form_widget(form.message) }}
+                                <button type="submit" class="bixol-primary-btn submit-btn">
+                                    Envoyer votre message <span><i class="fab fa-telegram-plane"></i></span></button>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Get In Tauch End -->

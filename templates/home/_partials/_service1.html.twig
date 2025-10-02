@@ -1,0 +1,56 @@
+
+<section class="bixol-service-section pt-100 pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4">
+                <div class="bixol-services">
+                    {% for i in 0..2 %}
+                        {% set gauche = random(0, 10) %}
+                        <div class="bixol-service-item">
+                            <div class="bixol-icon-wrapper">
+                                <span><i class="flaticon flaticon-furniture-and-household"></i></span>
+                            </div>
+                            <div class="bixol-service-content">
+                                <a href="{{ path('app_services', {'Slug': services[gauche].Slug, 'categorie': services[gauche].Metier.Slug}) }}">
+                                    <h5>{{ services[gauche].Titre | u.truncate(40, '...') }}</h5>
+                                </a>
+                                <p>{{ services[gauche].description | u.truncate(55, '...') }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bixol-service-middle">
+                    <div class="img-wrapper">
+                        <img src="{{ asset('images/services/sr-middle.png') }}" alt="">
+                        <div class="banner-content">
+                            <span class="banner-svg-1"></span>
+                            <span class="banner-svg-2"></span>
+                            <h3>25+</h3>
+                            <p>Services <br>nous proposons</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bixol-services">
+                    {% for i in 0..2 %}
+                        {% set droite = random(11, 20) %}
+                        <div class="bixol-service-item">
+                            <div class="bixol-icon-wrapper">
+                                <span><i class="flaticon flaticon-toilet"></i></span>
+                            </div>
+                            <div class="bixol-service-content">
+                                <a href="{{ path('app_services', {'Slug': services[droite].Slug, 'categorie': services[droite].Metier.Slug}) }}">
+                                    <h5>{{ services[droite].Titre  | u.truncate(40, '...') }}</h5>
+                                </a>
+                                <p>{{ services[droite].description | u.truncate(55, '...') }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

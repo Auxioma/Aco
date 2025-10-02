@@ -1,0 +1,53 @@
+        <section class="bixol-blog-area pt-100 pb-50">
+            <div class="container">
+                <div class="bixol-blog-top">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="bixol-title-area">
+                                <span class="bixol-subtitle">Nettoyage professionnel</span>
+                                <h3>Actualités et conseils<span>nettoyage pour entreprises</span></h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bf-desc">
+                                <p>
+                                    Découvrez nos articles dédiés au <strong>nettoyage professionnel des bureaux</strong>, 
+                                    à l’<strong>entretien des locaux d’entreprise</strong> et aux 
+                                    <strong>bonnes pratiques d’hygiène en milieu de travail</strong>.  
+                                    Nous partageons des conseils, tendances et solutions pour garantir 
+                                    un environnement propre, sain et agréable pour vos collaborateurs et vos clients.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bixol-blog-slider">
+
+                    {% for item in blogs %}
+                    <div class="bixol-single-blog">
+                        <div class="bixol-img-wrapper">
+                            <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}">
+                                <img src="{{ vich_uploader_asset(item, 'imageFile') }}" alt="{{ item.name}}" width="270" height="321">
+                            </a>
+                            <div class="bixol-blog-date">
+                                <span>{{ item.createdAt|format_datetime(locale='fr', pattern='MMM yyyy') }}</span>
+                            </div>
+                        </div>
+                        <div class="bixol-blog-content">
+                            <a href="blog.html" class="bixol-category">Plumbing</a>
+                            <div class="bixol-blog-headline">
+                                <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}"><h5>{{ item.name}} </h5></a>
+                            </div>
+                            <div class="bixol-blog-pera">
+                                <p>{{ item.description|striptags|u.truncate(200)|e }}</p>
+                            </div>
+                            <div class="bixol-blog-btn">
+                                <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}" class="bixol-primary-btn"> Lire nos conseils <span><i class="fas fa-plus"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>

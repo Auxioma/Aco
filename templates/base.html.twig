@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="description" content="{% block description %}Welcome!{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="{{ asset('images/icone.ico') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('images/icone.ico') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+
+        {{ encore_entry_link_tags('app') }}
+
+    </head>
+    <body>
+    
+        <a href="#" class="scrolltop-btn"><span><i class="flaticon-arrow"></i></span></a>
+
+        {% if app.request.get('_route') == 'app_homepage' %}
+            {{render(controller('App\\Controller\\_partials\\MenuController::Menu'))}}
+            {{render(controller('App\\Controller\\_partials\\MenuController::MenuMobileHome'))}}
+
+        {% else %}
+
+            {{render(controller('App\\Controller\\_partials\\MenuController::AutreQueLaHomepage'))}}
+            {{render(controller('App\\Controller\\_partials\\MenuController::AutreQueLaHomepageMobile'))}}
+            
+            {% include '_partials/_breadcrumb.html.twig' %}
+
+        {% endif %}
+
+        {% block body %}{% endblock %}
+
+        {% include '_partials/_footer.html.twig' %}
+        
+        {{ encore_entry_script_tags('app') }}
+
+        {% block javascripts %}{% endblock %}
+        {# Mise en plave des données structurées #}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "ACO PROPRETÉ, expert en nettoyage pour professionnels",
+                "url": "https://acoproprete.com/",
+                "logo": "https://acoproprete.com/images/logo.png",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+33 6 95 74 93 94",
+                    "contactType": "customer service",
+                    "areaServed": "FR",
+                    "availableLanguage": "French",
+                    "contactOption": "TollFree",
+                    "email": "aco@acoproprete.com"
+                }
+            }
+        </script>
+    </body>
+</html>

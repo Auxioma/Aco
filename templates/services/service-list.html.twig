@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  {% endblock %}
+
+{% block body %}
+    <!-- Services Section -->
+    <section class="sr3-service-section pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="bixol-title-area">
+                        <span class="bixol-subtitle">Les différents services de nettoyage</span>
+                        <h3>Les différents types de services effectués <span>de nettoyage professionnel.</span></h3>
+                        <p>Nettoyage de bureaux, de vitres, de tapis, de fin de chantier, de voitures, de moquettes, de résidences, d'hôtels, de restaurants, etc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sr3-service-bottom">
+                <div class="row">
+                    {% for metier in metiers %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="sr3-sr-item">
+                            <span class="item-count">0{{ loop.index }}</span>
+                            <div class="icon-wrapper">
+                                <span><i class="flaticon flaticon-clean"></i></span>
+                            </div>
+                            <h5>{{ metier.titre | u.truncate(27, '...') }}</h5>
+                            <p>
+                                {{ metier.description | u.truncate(100, '...') }}
+                            </p>
+                            <div class="sr3-hv-item" data-background="{{ asset('images/metier/services/' ~ metier.slug ~ '.png') }}">
+                                <a href="{{ path('app_metier', {'Slug': metier.slug}) }}">
+                                    <h5>{{ metier.titre | u.truncate(27, '...') }}</h5>
+                                </a>
+                                <p>
+                                    {{ metier.description | u.truncate(100, '...') }}
+                                </p>
+                                <a href="{{ path('app_metier', {'Slug': metier.slug}) }}">
+                                    {{ metier.titre }} <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <span class="hv-item-count">0{{ loop.index }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="view-more-service">
+                    <p>Vous avez besoin d'une prestation de nettoyage <a href="{{ path('app_contact') }}">Contactez nous</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Section End -->
+
+    {% include '_partials/_mignatures/_counterup.html.twig' %}
+
+    {% include '_partials/_mignatures/_testimonial.html.twig' %}
+
+{% endblock %}

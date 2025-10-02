@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://https://acoproprete.com/sitemapservice.xml
+Sitemap: https://https://acoproprete.com/sitemapmetier.xml
+Sitemap: https://https://acoproprete.com/sitemapcategories.xml

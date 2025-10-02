@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prestations de nettoyage professionnel pour entreprises du chablais{% endblock %}
+{% block description %}La satisfaction client est au cœur de notre service de nettoyage en Haute-Savoie. Service de nettoyage poussé. Appelez-nous pour en savoir plus.{% endblock %}
+
+{% block body %}
+
+	{% cache "Pageslider" tags('slider') %}
+	{% include 'home/_partials/_slider.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pageservices" tags('services') %}
+	{% include 'home/_partials/_services.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagesabout" tags('about') %}
+	{% include 'home/_partials/_about.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagesservice1" tags('service1') %}
+	{% include 'home/_partials/_service1.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagescounterup" tags('counterup') %}
+	{% include '_partials/_mignatures/_counterup.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagesteam" tags('team') %}
+	{% include 'home/_partials/_team.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagesstudy" tags('study') %}
+	{% include 'home/_partials/_study.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagestauch" tags('tauch') %}
+	{% include 'home/_partials/_tauch.html.twig' %}
+	{% endcache %}
+
+	{% cache "Pagesfeedback" tags('feedback') %}
+	{% include 'home/_partials/_feedback.html.twig' %}
+	{% endcache %}
+
+	{% include 'home/_partials/_blog.html.twig' %}
+
+	{% cache "Pagescontact" tags('contact') %}
+	{% include 'home/_partials/_contact.html.twig' %}
+	{% endcache %}
+
+	{% cache "PagesGoogle" tags('Google') %}
+	<!-- Google Map -->
+	<div class="bixol-footer-top">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11006.145085001657!2d6.666269314233389!3d46.39842185770759!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c3de1bc1b61fb%3A0xabe85bc5296c8618!2sA.C.O.!5e0!3m2!1sfr!2sfr!4v1681283039377!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+	<!-- Google Map -->
+	{% endcache %}
+{% endblock %}

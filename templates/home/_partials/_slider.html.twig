@@ -1,0 +1,491 @@
+
+<div class="hero-slider-1">
+    <p class="rs-p-wp-fix"></p>
+    <rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="home-1" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+        <rs-module id="rev_slider_1_1" data-version="6.5.7">
+            <rs-slides>
+                <rs-slide
+                        style="position: absolute;"
+                        data-key="rs-1"
+                        data-title="Slide"
+                        data-thumb="assets/bg-slider-img1-50x100.jpg"
+                        data-anim="ms:1000;r:0;"
+                        data-in="o:0;"
+                        data-out="a:false;"
+                >
+                    <img src="{{ vich_uploader_asset(sliders[0], 'imageFile') }}"
+                         title="bg-slider-img1"
+                         width="1920"
+                         height="676"
+                         class="rev-slidebg tp-rs-img"
+                         data-panzoom="d:10000;ss:115%;se:100;"
+                         data-no-retina
+                    >
+
+                    <rs-group
+                            id="slider-1-slide-1-layer-2"
+                            data-type="group"
+                            data-xy="xo:30px,30px,30px,22px;y:t,t,m,m;yo:125px,125px,-20px,-20px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:800px,800px,600px,500px;h:350px,350px,320px,300px;"
+                            data-rsp_bd="off"
+                            data-frame_0="o:1;"
+                            data-frame_999="o:0;st:w;sR:8700;sA:9000;"
+                            style="z-index:15;"
+                    >
+                        <rs-layer
+                                id="slider-1-slide-1-layer-3"
+                                data-type="shape"
+                                data-xy="yo:8px;"
+                                data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                                data-dim="w:64px;h:3px;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="x:50;"
+                                data-frame_1="st:800;sp:1000;sR:800;"
+                                data-frame_999="o:0;st:w;sR:7200;"
+                                style="z-index:10;background-color:#22d3ee;"
+                        >
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-1-layer-4"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="xo:82px;yo:-5px;"
+                                data-text="w:normal;s:20,20,18,18;l:26;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="x:50;"
+                                data-frame_1="st:1000;sp:1000;sR:1000;"
+                                data-frame_999="o:0;st:w;sR:7000;"
+                                style="z-index:11;font-family:'Rubik';"
+                        >
+                            {{ sliders[0].Titre }}
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-1-layer-5"
+                                data-type="text"
+                                data-color="#082680"
+                                data-xy="yo:26px;"
+                                data-text="w:normal;s:70,70,50,38;l:80,80,60,50;ls:-2px,-2px,-2px,-1px;fw:700;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="o:1;"
+                                data-frame_0_chars="d:5;x:105%;o:1;rY:45deg;rZ:90deg;"
+                                data-frame_0_mask="u:t;"
+                                data-frame_1="st:1200;sp:800;sR:1200;"
+                                data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                data-frame_1_mask="u:t;"
+                                data-frame_999="o:0;st:w;sR:4400;"
+                                style="z-index:12;font-family:'Poppins';"
+                        >
+                            {{ sliders[0].SousTitre | raw }}
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-1-layer-6"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="yo:202px,202px,165px,146px;"
+                                data-text="w:normal;s:18,18,18,16;l:26,26,26,24;"
+                                data-dim="w:420px,420px,420px,300px;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3600;sp:1000;sR:3600;"
+                                data-frame_999="o:0;st:w;sR:4400;"
+                                style="z-index:13;font-family:'Rubik';"
+                        >
+                            {{ sliders[0].Paragraphe }}
+                        </rs-layer>
+
+                        <a
+                                id="slider-1-slide-1-layer-7"
+                                class="rs-layer"
+                                href="{{  path('app_metier', {'Slug': sliders[0].Metier.Slug}) }}" target="_self" rel="nofollow"
+                                data-type="text"
+                                data-color="#2b2b2b"
+                                data-xy="y:b;"
+                                data-text="w:normal;s:18;l:25,20,15,9;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3800;sp:1000;sR:3800;"
+                                data-frame_999="o:0;st:w;sR:4200;"
+                                style="z-index:14;font-family:'Roboto';"
+                        >
+                                <span class="btn btn-plus icon-right">
+                                    {{  sliders[0].Metier.Titre }}
+                                    <i class="flaticon flaticon-gear icon-abs"></i>
+                                </span>
+                        </a>
+                    </rs-group>
+
+                    <rs-layer
+                            id="slider-1-slide-1-layer-0"
+                            data-type="image"
+                            data-rsp_ch="on"
+                            data-xy="x:c;y:b;yo:-1px,0,0,0;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:['100%','100%','100%','100%'];"
+                            data-basealign="slide"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            style="z-index:8;"
+                    >
+                        <img src="{{ asset('images/slider/bg-slider-shape1.png') }}"
+                          alt="bg-slider-shape1"
+                          class="tp-rs-img"
+                          width="2600"
+                          height="309"
+                          data-no-retina
+                        >
+                    </rs-layer>
+
+                    <rs-layer
+                            id="slider-1-slide-1-layer-1"
+                            data-type="image"
+                            data-xy="x:c;xo:-65px;yo:100px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:['138px','138px','138px','138px'];h:['118px','118px','118px','118px'];"
+                            data-rsp_bd="off"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            data-loop_999="sX:0.8;sY:0.8;o:0.6;sp:3000;e:power0.inOut;yys:t;yyf:t;"
+                            style="z-index:9;"
+                    ><img src="{{ asset('images/slider/slider-star1.png')}}"
+                          alt="slider-star1"
+                          class="tp-rs-img"
+                          width="138"
+                          height="118"
+                          data-no-retina
+                        >
+                    </rs-layer>
+                </rs-slide>
+                <rs-slide style="position: absolute;"
+                          data-key="rs-2"
+                          data-title="Slide"
+                          data-thumb="assets/bg-slider2-50x100.jpg"
+                          data-anim="ms:1000;r:0;"
+                          data-in="o:0;"
+                          data-out="a:false;"
+                >
+                    <img src="{{ vich_uploader_asset(sliders[1], 'imageFile') }}"
+                         title="bg-slider2"
+                         width="1920"
+                         height="680"
+                         class="rev-slidebg tp-rs-img"
+                         data-panzoom="d:10000;ss:100%;se:115%;"
+                         data-no-retina
+                    >
+
+                    <rs-group
+                            id="slider-1-slide-2-layer-2"
+                            data-type="group"
+                            data-xy="x:r,r,r,l;xo:0,0,0,22px;y:t,t,m,m;yo:125px,125px,-20px,-20px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:550px,550px,440px,500px;h:350px,350px,320px,300px;"
+                            data-rsp_bd="off"
+                            data-frame_0="o:1;"
+                            data-frame_999="o:0;st:w;sR:8700;sA:9000;"
+                            style="z-index:15;"
+                    >
+                        <rs-layer
+                                id="slider-1-slide-2-layer-3"
+                                data-type="shape"
+                                data-xy="yo:8px;"
+                                data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                                data-dim="w:64px;h:3px;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="x:50;"
+                                data-frame_1="st:800;sp:1000;sR:800;"
+                                data-frame_999="o:0;st:w;sR:7200;"
+                                style="z-index:10;background-color:#22d3ee;"
+                        >
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-2-layer-4"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="xo:82px;yo:-5px;"
+                                data-text="w:normal;s:20,20,18,18;l:26;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="x:50;"
+                                data-frame_1="st:1000;sp:1000;sR:1000;"
+                                data-frame_999="o:0;st:w;sR:7000;"
+                                style="z-index:11;font-family:'Rubik';"
+                        >
+                            {{ sliders[1].Titre }}
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-2-layer-5"
+                                data-type="text"
+                                data-color="#082680"
+                                data-xy="yo:26px;"
+                                data-text="w:normal;s:70,70,50,38;l:80,80,60,50;ls:-2px,-2px,-2px,-1px;fw:700;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="o:1;"
+                                data-frame_0_chars="d:5;x:105%;o:1;rY:45deg;rZ:90deg;"
+                                data-frame_0_mask="u:t;"
+                                data-frame_1="st:1200;sp:800;sR:1200;"
+                                data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                data-frame_1_mask="u:t;"
+                                data-frame_999="o:0;st:w;sR:4400;"
+                                style="z-index:12;font-family:'Poppins';"
+                        >
+                            {{ sliders[1].SousTitre | raw }}
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-2-layer-6"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="yo:202px,202px,165px,146px;"
+                                data-text="w:normal;s:18,18,18,16;l:26,26,26,24;"
+                                data-dim="w:420px,420px,420px,300px;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3600;sp:1000;sR:3600;"
+                                data-frame_999="o:0;st:w;sR:4400;"
+                                style="z-index:13;font-family:'Rubik';"
+                        >
+                            {{ sliders[1].Paragraphe | raw }}
+                        </rs-layer>
+
+                        <a
+                                id="slider-1-slide-2-layer-7"
+                                class="rs-layer"
+                                href="{{  path('app_metier', {'Slug': sliders[1].Metier.Slug}) }}" target="_self" rel="nofollow"
+                                data-type="text"
+                                data-color="#2b2b2b"
+                                data-xy="y:b;"
+                                data-text="w:normal;s:18;l:25,20,15,9;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3800;sp:1000;sR:3800;"
+                                data-frame_999="o:0;st:w;sR:4200;"
+                                style="z-index:14;font-family:'Roboto';"
+                        ><span class="btn btn-plus icon-right">
+                                {{  sliders[1].Metier.Titre }}
+                                <i class="flaticon flaticon-gear icon-abs"></i></span>
+                        </a>
+                    </rs-group>
+
+                    <rs-layer
+                            id="slider-1-slide-2-layer-0"
+                            data-type="image"
+                            data-rsp_ch="on"
+                            data-xy="x:c;y:b;yo:-1px,0,0,0;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:['100%','100%','100%','100%'];"
+                            data-basealign="slide"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            style="z-index:8;"
+                    ><img src="{{ asset('images/slider/bg-slider-shape1.png') }}"
+                          alt="bg-slider-shape1"
+                          class="tp-rs-img"
+                          width="2600"
+                          height="309"
+                          data-no-retina
+                        >
+                    </rs-layer>
+
+                    <rs-layer
+                            id="slider-1-slide-2-layer-1"
+                            data-type="image"
+                            data-xy="x:c;xo:-65px;yo:100px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:['138px','138px','138px','138px'];h:['118px','118px','118px','118px'];"
+                            data-rsp_bd="off"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            data-loop_999="sX:0.8;sY:0.8;o:0.6;sp:3000;e:power0.inOut;yys:t;yyf:t;"
+                            style="z-index:9;"
+                    ><img src="{{ asset('images/slider/slider-star1.png') }}"
+                          alt="slider-star1"
+                          class="tp-rs-img"
+                          width="138"
+                          height="118"
+                          data-no-retina
+                        >
+                    </rs-layer>
+                </rs-slide>
+                <rs-slide style="position: absolute;" data-key="rs-3" data-title="Slide" data-thumb="assets/bg-slider3-50x100.jpg" data-anim="ms:1000;r:0;" data-in="o:0;" data-out="a:false;">
+                    <img src="{{ vich_uploader_asset(sliders[2], 'imageFile') }}"
+                         title="bg-slider3"
+                         width="1920"
+                         height="680"
+                         class="rev-slidebg tp-rs-img"
+                         data-panzoom="d:10000;ss:115%;se:100;"
+                         data-no-retina
+                    >
+
+                    <rs-group
+                            id="slider-1-slide-3-layer-2"
+                            data-type="group"
+                            data-xy="x:c;y:t,t,m,m;yo:125px,125px,-20px,-20px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:800px,800px,600px,500px;h:350px,350px,320px,300px;"
+                            data-rsp_bd="off"
+                            data-frame_0="o:1;"
+                            data-frame_999="o:0;st:w;sR:8700;sA:9000;"
+                            style="z-index:14;"
+                    >
+                        <rs-layer
+                                id="slider-1-slide-3-layer-4"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="x:c;yo:-5px;"
+                                data-text="w:normal;s:20,20,18,18;l:26;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="x:50;"
+                                data-frame_1="st:800;sp:1000;sR:800;"
+                                data-frame_999="o:0;st:w;sR:7200;"
+                                style="z-index:10;font-family:'Rubik';"
+                        >
+                                <span class="ct-slider-line">
+                                    {{ sliders[2].Titre }}
+                                </span>
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-3-layer-5"
+                                data-type="text"
+                                data-color="#082680"
+                                data-xy="x:c;yo:26px;"
+                                data-text="w:normal;s:70,70,50,36;l:80,80,60,48;ls:-2px,-2px,-2px,-1px;fw:700;a:center;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="o:1;"
+                                data-frame_0_chars="d:5;x:105%;o:1;rY:45deg;rZ:90deg;"
+                                data-frame_0_mask="u:t;"
+                                data-frame_1="st:1000;sp:800;sR:1000;"
+                                data-frame_1_chars="e:power4.inOut;d:10;rZ:0deg;"
+                                data-frame_1_mask="u:t;"
+                                data-frame_999="o:0;st:w;sR:4600;"
+                                style="z-index:11;font-family:'Poppins';"
+                        >
+                            {{ sliders[2].SousTitre | raw }}
+                        </rs-layer>
+
+                        <rs-layer
+                                id="slider-1-slide-3-layer-6"
+                                data-type="text"
+                                data-color="#3a4268"
+                                data-xy="x:c;yo:202px,202px,165px,146px;"
+                                data-text="w:normal;s:18,18,18,16;l:26,26,26,24;a:center;"
+                                data-dim="w:420px,420px,420px,300px;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3400;sp:1000;sR:3400;"
+                                data-frame_999="o:0;st:w;sR:4600;"
+                                style="z-index:12;font-family:'Rubik';"
+                        >
+                            {{ sliders[2].Paragraphe }}
+                        </rs-layer>
+
+                        <a
+                                id="slider-1-slide-3-layer-7"
+                                class="rs-layer"
+                                href="{{  path('app_metier', {'Slug': sliders[2].Metier.Slug}) }}" target="_self" rel="nofollow"
+                                data-type="text"
+                                data-color="#2b2b2b"
+                                data-xy="x:c;y:b;"
+                                data-text="w:normal;s:18;l:25,20,15,9;fw:500;"
+                                data-rsp_o="off"
+                                data-rsp_bd="off"
+                                data-frame_0="y:50;"
+                                data-frame_1="st:3600;sp:1000;sR:3600;"
+                                data-frame_999="o:0;st:w;sR:4400;"
+                                style="z-index:13;font-family:'Roboto';"
+                        ><span class="btn btn-plus icon-right">
+                                {{  sliders[2].Metier.Titre }}
+                                <i class="flaticon flaticon-gear icon-abs"></i></span>
+                        </a>
+                    </rs-group>
+
+                    <rs-layer
+                            id="slider-1-slide-3-layer-0"
+                            data-type="image"
+                            data-rsp_ch="on"
+                            data-xy="x:c;y:b;yo:-1px,0,0,0;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:['100%','100%','100%','100%'];"
+                            data-basealign="slide"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            style="z-index:8;"
+                    ><img src="{{ asset('images/slider/bg-slider-shape1.png') }}"
+                          alt="bg-slider-shape1"
+                          class="tp-rs-img"
+                          width="2600"
+                          height="309"
+                          data-no-retina
+                        >
+                    </rs-layer>
+
+                    <rs-layer
+                            id="slider-1-slide-3-layer-1"
+                            data-type="image"
+                            data-xy="xo:30px;yo:80px;"
+                            data-text="w:normal;s:20,16,12,7;l:0,20,15,9;"
+                            data-dim="w:138px,114px,86px,53px;h:118px,98px,74px,45px;"
+                            data-rsp_bd="off"
+                            data-frame_999="o:0;st:w;sR:8700;"
+                            data-loop_999="sX:0.8;sY:0.8;o:0.6;sp:3000;e:power0.inOut;yys:t;yyf:t;"
+                            style="z-index:9;"
+                    ><img src="{{ asset('images/slider/slider-star1.png') }}" alt="slider-star1" class="tp-rs-img" width="138" height="118" data-no-retina>
+                    </rs-layer>
+                </rs-slide>
+            </rs-slides>
+        </rs-module>
+    </rs-module-wrap>
+</div>
+{% set items = [] %}
+{% for s in sliders %}
+  {% set url = path('app_metier', {'Slug': s.Metier.Slug}) %}
+  {% set image_url = absolute_url(vich_uploader_asset(s, 'imageFile')) %}
+  {% set list_item = {
+    '@type': 'ListItem',
+    'position': loop.index,
+    'item': {
+      '@type': 'CreativeWork',
+      'name': s.Titre|default(''),
+      'headline': (s.SousTitre|default('')|striptags)|trim,
+      'description': (s.Paragraphe|default('')|striptags)|trim,
+      'inLanguage': 'fr',
+      'url': absolute_url(url),
+      'image': {
+        '@type': 'ImageObject',
+        'url': image_url,
+        'contentUrl': image_url,
+        'caption': s.Titre|default(''),
+        'representativeOfPage': true
+      }
+    }
+  } %}
+  {% set items = items|merge([list_item]) %}
+{% endfor %}
+
+<script type="application/ld+json">
+{{ {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  'inLanguage': 'fr',
+  'name': 'Accueil',
+  'hasPart': {
+    '@type': 'ItemList',
+    'name': 'Hero Slider',
+    'itemListOrder': 'http://schema.org/ItemListOrderAscending',
+    'numberOfItems': items|length,
+    'itemListElement': items
+  }
+}|json_encode(constant('JSON_UNESCAPED_SLASHES'), constant('JSON_UNESCAPED_UNICODE'))|raw }}
+</script>

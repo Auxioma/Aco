@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <!-- Portfolio Area -->
+    <section class="portfolio-area pt-100 pb-150">
+        <div class="container">
+            <div class="pf-top">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="bixol-title-area">
+                            <span class="bixol-subtitle">Our Portfolio</span>
+                            <h3>Some work from our <span>memorable gallery</span></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bf-desc">
+                            <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-filter">
+                <div class="controls">
+                    <ul class="filter-button-group">
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter=".window">Plumbing</li>
+                        <li data-filter=".office">Window cleaning</li>
+                        <li data-filter=".office, .window">Office cleaning</li>
+                    </ul>
+                </div>
+                <div class="filter-items">
+                    <div class="row grid">
+                        <div class="col-lg-4 col-sm-6 grid-item plumbing">
+                            <div class="filter-item">
+                                <div class="img-wrapper">
+                                    <img src="assets/images/portfolio/001.jpg" alt="">
+                                </div>
+                                <div class="pf-item-content">
+                                    <a href="portfolio-details.html" class="plus-icon"><i class="fas fa-plus"></i></a>
+                                    <a href="portfolio-details.html"><h6>Furniture Cleaning</h6></a>
+                                    <span class="devider"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 grid-item window">
+                            <div class="filter-item">
+                                <div class="img-wrapper">
+                                    <img src="assets/images/portfolio/02.jpg" alt="">
+                                </div>
+                                <div class="pf-item-content">
+                                    <a href="portfolio-details.html" class="plus-icon"><i class="fas fa-plus"></i></a>
+                                    <a href="portfolio-details.html"><h6>Furniture Cleaning</h6></a>
+                                    <span class="devider"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 grid-item office">
+                            <div class="filter-item">
+                                <div class="img-wrapper">
+                                    <img src="assets/images/portfolio/03.jpg" alt="">
+                                </div>
+                                <div class="pf-item-content">
+                                    <a href="portfolio-details.html" class="plus-icon"><i class="fas fa-plus"></i></a>
+                                    <a href="portfolio-details.html"><h6>Furniture Cleaning</h6></a>
+                                    <span class="devider"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 grid-item plumbing">
+                            <div class="filter-item">
+                                <div class="img-wrapper">
+                                    <img src="assets/images/portfolio/04.jpg" alt="">
+                                </div>
+                                <div class="pf-item-content">
+                                    <a href="portfolio-details.html" class="plus-icon"><i class="fas fa-plus"></i></a>
+                                    <a href="portfolio-details.html"><h6>Furniture Cleaning</h6></a>
+                                    <span class="devider"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 grid-item home">
+                            <div class="filter-item">
+                                <div class="img-wrapper">
+                                    <img src="assets/images/portfolio/05.jpg" alt="">
+                                </div>
+                                <div class="pf-item-content">
+                                    <a href="portfolio-details.html" class="plus-icon"><i class="fas fa-plus"></i></a>
+                                    <a href="portfolio-details.html"><h6>Furniture Cleaning</h6></a>
+                                    <span class="devider"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bixol-pagination">
+                    <ul>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Area End -->
+{% endblock %}

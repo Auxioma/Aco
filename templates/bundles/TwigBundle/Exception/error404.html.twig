@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <!-- 404 Area -->
+    <section class="not-found-area pt-100 pb-150" data-background="{{ asset('images/404-bg.jpg') }}">
+        <div class="cotainer">
+            <div class="row"> 
+                <div class="col-lg-12">
+                    <div class="404-content">
+                        <div class="title-txt">
+                            <h3>L'URL que vous avez tapée comporte une erreur de frappe ou n'est plus valide</h3>
+                        </div>
+                        <div class="not-found-img">
+                            <img src="{{ asset('images/404.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="not-found-btns">
+                <a href="{{path('app_homepage')}}" class="home-btn"><span><i class="fas fa-home"></i></span>Allez a la page d'accueil</a>
+            </div>
+        </div>
+    </section>
+    <!-- 404 End -->
+{% endblock %}

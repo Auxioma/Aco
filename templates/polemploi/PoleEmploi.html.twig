@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+        <!-- Blog Content -->
+        <div class="blog-content-section pt-100 pb-100">
+            <span class="star-object"><img src="assets/images/home1/slider-object.png" alt=""></span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="blog-posts">
+
+                            {% for job in jobs %}
+
+                            <div class="blog-single-post">
+                                <div class="bixol-img-wrapper">
+                                    <a href="{{ job.origineOffre.urlOrigine }}" rel="external nofollow" target="_blank">
+                                        <img src="{{ job.entreprise.logo }}" width="270" height="321" alt="" style="height:321px;max-height:321px">
+                                    </a>
+                                    <div class="bixol-blog-date">
+                                        <span>{{ job.dateActualisation | date('d  M') }}</span>
+                                    </div>
+                                </div>
+                                <div class="bixol-blog-content">
+                                    <a href="{{ job.origineOffre.urlOrigine }}" rel="external nofollow" target="_blank" class="bixol-category">
+                                        {{ job.appellationlibelle }} - {{ job.typeContrat }}
+                                    <div class="bixol-blog-headline">
+                                        <a href="{{ job.origineOffre.urlOrigine }}" rel="external nofollow" target="_blank"><h5>{{ job.secteurActiviteLibelle }}</h5></a>
+                                    </div>
+                                    <div class="bixol-blog-pera">
+                                        <p>{{ job.description | u.truncate(250, '...')}}</p>
+                                    </div>
+                                    <div class="bixol-blog-btn">
+                                        <a href="{{job.contact.urlPostulation }}" rel="external nofollow" target="_blank" class="bixol-primary-btn"> Postuler <span><i class="fas fa-plus"></i></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                        {#
+                        <div class="bixol-pagination">
+                            <ul>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">&#8250;</a></li>
+                            </ul>
+                        </div>
+                        #}
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="blog-sidebar">
+                            <div class="sidebar-widget category-widget">
+                                <div class="widget-title">
+                                    <h5>Categories</h5>
+                                </div>
+                                <div class="list-nav">
+                                    <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+                                        {% block navigation %}
+                                            {% for categorie in categories %}
+                                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                                    <a  itemprop="item" href="{{ url( categorie.slug ) }}">
+                                                        <span itemprop="name">
+                                                            {{ categorie.name }}
+                                                        </span>
+                                                    </a>
+                                                    <meta itemprop="position" content="{{ loop.index }}" />
+                                                </li>
+                                            {% endfor %}
+                                        {% endblock %}   
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Content End -->
+{% endblock %}

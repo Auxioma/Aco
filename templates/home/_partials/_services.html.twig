@@ -1,0 +1,48 @@
+
+<section class="bixol-services">
+    <div class="container">
+        <div class="bixol-service-wrapper bixol-service-slider">
+            {% for metier in metiers %}
+                <div class="bixol-single-item" itemscope itemtype="https://schema.org/NewsArticle">
+                    <div class="bixol-icon-wrapper">
+                        <meta itemprop="image" content="{{ 'https://acoproprete.com/images/metier/icon-' ~ loop.index ~ '.png' }}" />
+                        <img  itemprop="image" src="{{ asset('images/metier/icon-' ~ loop.index ~ '.png') }}" alt="">
+                    </div>
+                    <div class="bixol-sr-content">
+                        <a href="{{ path('app_metier', {'Slug': metier.Slug}) }}">
+                            <h6  itemprop="headline">{{ metier.titre }}</h6>
+                        </a>
+                        <p>{{ metier.description }}</p>
+                        <a rel="noopener noreferrer nofollow" href="{{ path('app_metier', {'Slug': metier.Slug}) }}" class="bixol-readmore-btn">En savoir plus</a>
+                    </div>
+                    <div class="bixol-sr-hover">
+                        <div class="img-wrapper">
+                            <img src="{{ asset('images/metier/services/' ~ metier.Slug ~'.png') }}" alt="{{ metier.titre }}">
+                            <span class="img-shadow"></span>
+                        </div>
+                        <div class="icon-wrapper">
+                            <div class="bixol-img">
+                                <img src="{{ asset('images/metier/icon-' ~ loop.index ~ '.png') }}" alt="{{ metier.titre }}">
+                            </div>
+                            <span class="bixol-icon-shadow"></span>
+                        </div>
+                        <div class="bixol-sr-content">
+                            <a href="{{ path('app_metier', {'Slug': metier.Slug}) }}">
+                                <h6>{{ metier.titre }}</h6>
+                            </a>
+                            <p>{{ metier.description }}</p>
+                            <a rel="noopener noreferrer nofollow" href="{{ path('app_metier', {'Slug': metier.Slug}) }}" class="bixol-readmore-btn">En savoir plus</a>
+                        </div>
+                    </div>
+                    <span itemprop="datePublished" content="2023-02-02T04:08:17+08:00"></span>
+                    <span itemprop="dateModified" content="{{ 'now' | date('Y-d-m')  }}T09:20:00+08:00"></span>
+                    <span style="display:none" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <a itemprop="url" href="{{ url('app_contact') }}">
+                            <span itemprop="name">acoproprete</span>
+                        </a>
+                    </span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

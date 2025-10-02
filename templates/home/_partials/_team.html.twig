@@ -1,0 +1,31 @@
+
+<section class="bixol-team-area pt-100 pb-120">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9">
+                <div class="bixol-title-area">
+                    <span class="bixol-subtitle">Les membres de l'équipe</span>
+                    <h3>Nous disposons d'une équipe d'experts  <span>pour vous servir.</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="bixol-team-container bixol-team-slider">
+            {% for team in teams %}
+                <div class="bixol-team-single">
+                    <div class="bixol-img-wrapper">
+                        <img src="{{ vich_uploader_asset(team, 'imageFile') }}" alt="">
+                    </div>
+                    <div class="bixol-team-content">
+                        <a href="#"><h5>{{ team.nom }}</h5></a>
+                        <span>{{ team.expertise }}</span>
+                        <span class="team-social-link"><i class="fas fa-share-alt"></i></span>
+                        <div class="bixol-team-social-items">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

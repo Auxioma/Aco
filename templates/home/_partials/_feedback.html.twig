@@ -1,0 +1,63 @@
+        <!-- Feedback Section -->
+        <section class="bixol-feedback" data-background="assets/images/home1/feedback-bg.jpg">
+            <div class="container">
+                <div class="bixol-feedback-top">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <div class="bixol-title-area">
+                                <span class="bixol-subtitle">Témoignage d'un client</span>
+                                <h3>Nous sommes très heureux des <span>évaluations des clients</span></h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bf-desc">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bixol-feedback-slider">
+                    {% for feedback in avis %}
+                    <div class="feedback-column">
+                        <span class="quote-icon"><i>,,</i></span>
+                        <div class="feedback-content">
+                            <p>{{ feedback.description |u.truncate(100, '...') }}</p>
+                        </div>
+                        <div class="feedback-rating">
+                            {% for i in 1..5 %}
+                                {% if i <= feedback.Review %}
+                                    <span><i class="fas fa-star"></i></span>
+                                {% else %}
+                                    <span><i class="far fa-star"></i></span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="feedback-client-info">
+                            <div class="client-thumb">
+
+                                {# en cas d'image false, voir pour utilisé une API de DEEPFAKE #}
+                                <img src="{{ vich_uploader_asset(feedback, 'imageFile') }}" alt="{{ feedback.name }}">
+
+                                <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                    <g>
+                                        <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                    </g>
+                                </svg>
+                                <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                    <g>
+                                        <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                    </g>
+                                </svg>
+  
+                            </div>
+                            <div class="clients-name">
+                                <h6>{{ feedback.name }}</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- Feedback Section -->

@@ -1,0 +1,46 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        categories:
+            uri_prefix:  /images/categories
+            upload_destination: '%kernel.project_dir%/public/images/categories'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        slider:
+            uri_prefix:  /images/slider
+            upload_destination: '%kernel.project_dir%/public/images/slider'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        metier:
+            uri_prefix:  /images/metier
+            upload_destination: '%kernel.project_dir%/public/images/metier'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        services:
+            uri_prefix:  /images/services
+            upload_destination: '%kernel.project_dir%/public/images/services'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        teams:
+            uri_prefix:  /images/teams
+            upload_destination: '%kernel.project_dir%/public/images/teams'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        feedback:
+            uri_prefix:  /images/feedback
+            upload_destination: '%kernel.project_dir%/public/images/feedback'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
+        blog:
+            uri_prefix:  /images/blog
+            upload_destination: '%kernel.project_dir%/public/images/blog'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            delete_on_remove: true
+            delete_on_update: false
