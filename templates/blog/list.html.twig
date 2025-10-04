@@ -20,12 +20,12 @@
                                     </div>
                                 </div>
                                 <div class="bixol-blog-content">
-                                    <a href="blog.html" class="bixol-category">Plumbing</a>
+                                    <a class="bixol-category">{{ item.menu.name }}</a>
                                     <div class="bixol-blog-headline">
                                         <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}"><h5>{{ item.name }}</h5></a>
                                     </div>
                                     <div class="bixol-blog-pera">
-                                        <p>{{ item.description|striptags|u.truncate(290)|e }}</p>
+                                        <p>{{ item.description|striptags|u.truncate(80)|e }}</p>
                                     </div>
                                     <div class="bixol-blog-btn">
                                         <a href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}" class="bixol-primary-btn"> Lire nos conseils <span><i class="fas fa-plus"></i></span></a>

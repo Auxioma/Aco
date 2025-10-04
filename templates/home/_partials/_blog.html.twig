@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="bixol-blog-content">
-                            <a href="blog.html" class="bixol-category">{{ item.menu.name }}</a>
+                            <a class="bixol-category">{{ item.menu.name }}</a>
                             <div class="bixol-blog-headline">
                                 <a title="{{ item.name }}" href="{{ path('app_blog_detail', {category: item.menu.slug, slug: item.slug}) }}"><h5>{{ item.name|u.truncate(35, '...') }} </h5></a>
                             </div>
