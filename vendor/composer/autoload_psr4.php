@@ -99,6 +99,8 @@ return array(
     'Metadata\\' => array($vendorDir . '/jms/metadata/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'Liip\\ImagineBundle\\' => array($vendorDir . '/liip/imagine-bundle'),
+    'Knp\\Component\\' => array($vendorDir . '/knplabs/knp-components/src/Knp/Component'),
+    'Knp\\Bundle\\PaginatorBundle\\' => array($vendorDir . '/knplabs/knp-paginator-bundle/src'),
     'Karser\\Recaptcha3Bundle\\' => array($vendorDir . '/karser/karser-recaptcha3-bundle'),
     'Imagine\\' => array($vendorDir . '/imagine/imagine/src'),
     'FOS\\CKEditorBundle\\' => array($vendorDir . '/friendsofsymfony/ckeditor-bundle/src'),

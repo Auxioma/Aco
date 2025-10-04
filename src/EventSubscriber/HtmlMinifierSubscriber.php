@@ -27,8 +27,6 @@ class HtmlMinifierSubscriber implements EventSubscriberInterface
             // Minification simple
             $minified = $this->minifyHtml($content);
 
-            dd($minified);
-
             $response->setContent($minified);
         }
     }

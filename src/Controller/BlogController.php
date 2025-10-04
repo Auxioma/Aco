@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
-use App\Repository\ArticleBlogRepository;
 use App\Repository\MenuBlogRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ArticleBlogRepository;
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BlogController extends AbstractController
 {
@@ -29,11 +31,11 @@ class BlogController extends AbstractController
 
 
     #[Route('/nettoyage-entreprise/chablais/haute-savoie/{category}', name: 'app_blog_list')]
-    public function list($category, MenuBlogRepository $menu): Response
+    public function list($category, MenuBlogRepository $menu, PaginatorInterface $paginator, Request $request): Response
     {
         $articles = $menu->findBy(
             ['slug' => $category],   
-            ['id' => 'DESC']         
+            ['id' => 'ASC']         
         );
 
         $breadcrumb = [
@@ -41,9 +43,15 @@ class BlogController extends AbstractController
             'Slug' => 'blog'
         ];
 
+        $pagination = $paginator->paginate(
+            $articles, /* query NOT result */
+            $request->query->getInt('page', 1), /* page number */
+            1 /* limit per page */
+        );
+
         return $this->render('blog/list.html.twig', [
             'services' => $breadcrumb,
-            'articles' => $articles,
+            'articles' => $pagination,
             'menus' => $menu->findAll(),
         ]);
     }
